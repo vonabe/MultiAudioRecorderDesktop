@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="MultiAudioRecorder.jnlp">
+  <information>
+    <title>MultiAudioRecorder</title>
+    <vendor>wenkael™</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" java-vm-args="-Djava.security.policy=applet.policy "  href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="MultiAudioRecorder.jar" size="856310" download="eager" />
+    <jar href="lib\TarsosDSP-2.3.jar" size="582022" download="eager" />
+    <jar href="lib\bridj-0.6.2.jar" size="909680" download="eager" />
+    <jar href="lib\jcodec-0.1.9.jar" size="1376572" download="eager" />
+    <jar href="lib\jcodec-javase-0.1.9.jar" size="10314" download="eager" />
+    <jar href="lib\json-simple-1.1.1.jar" size="26747" download="eager" />
+    <jar href="lib\slf4j-api-1.7.2.jar" size="30408" download="eager" />
+    <jar href="lib\webcam-capture-0.3.10.jar" size="420584" download="eager" />
+  </resources>
+<security>
+  <all-permissions/>
+</security>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="MultiAudioRecorder" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="multiaudiorecorder.MultiAudioRecorder"  name="MultiAudioRecorder" />
+  <update check="always"/>
+</jnlp>

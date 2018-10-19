@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Group xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle fx:id="rectangle" arcHeight="5.0" arcWidth="5.0" fill="#000d26cd" height="200.0" opacity="0.8" stroke="RED" strokeType="INSIDE" width="350.0" />
+      <Button fx:id="OK" layoutX="114.0" layoutY="165.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="50.0" stylesheets="@css_dialog.css" text="YES">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="NO" layoutX="175.0" layoutY="165.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" stylesheets="@css_dialog.css" text="NO">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Label fx:id="lblSQUARY" layoutX="16.0" layoutY="14.0" prefHeight="48.0" prefWidth="318.0" text="You want exit?" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <effect>
+            <Reflection fraction="1.0" topOffset="-10.0" />
+         </effect>
+      </Label>
+   </children>
+</Group>

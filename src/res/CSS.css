@@ -1,0 +1,69 @@
+
+.vbox {
+    -fx-border-radius: 20px;
+    /*-fx-background-color: linear-gradient(#5A5A5A, #2E2E2E);*/
+    -fx-background-size: 96, 205;
+    -fx-background-repeat: no-repeat;
+    /*-fx-border-color: linear-gradient(#5A5A5A, #2E2E2E);*/
+    -fx-border-color: #000000;
+    -fx-border-width: 2px;
+    -fx-padding: 10;
+    -fx-spacing: 2;
+}
+
+.panelview{
+    /*-fx-border-color: #2E2E2E;*/
+    -fx-border-color: #000000;
+    -fx-border-radius: 0px;
+    -fx-background-color: #5A5A5A;
+}
+
+.gridpanel {
+    /*-fx-border-color: #5A5A5A;*/
+    -fx-border-color: linear-gradient(#000000, blue);
+
+    -fx-border-radius: 20px;
+    -fx-background-color: rgba(0,0,0,0);
+     -fx-background-radius: 20px;
+     
+    /*-fx-background-color: linear-gradient(#000000, #1C1C1C);*/
+    /*-fx-background-color: linear-gradient(rgba(155,250,0,1), rgba(255,150,0,0.6));*/
+}
+
+.choisebox {
+    
+    -fx-font-size:  12px;
+    -fx-background-radius: 1px;
+    -fx-background-color: linear-gradient(#9b9b9b, #FFFF4943);
+    -fx-border-radius: 2px;
+    -fx-border-color: #000000;
+    
+}
+.label       {-fx-text-fill: aquamarine;}
+.context-menu {-fx-background-color: rgba(0.3,0.3,0.3,0.4); /*#2A2A2A;*/}
+.choisebox:pressed{ -fx-background-color: linear-gradient(#5A5A5A, #2E2E2E);}
+
+.button-update{
+    -fx-background-color: linear-gradient(#9b9b9b, #2E2E2E);
+    -fx-background-image: url("refresh_icon.png");
+    -fx-background-size: 24 24;
+    -fx-background-repeat: no-repeat;   
+}
+.button{
+    -fx-background-color: linear-gradient(#9b9b9b, #2E2E2E);
+    -fx-text-fill: aquamarine;
+}
+.button:pressed
+{
+    -fx-background-color: #000000;
+    -fx-text-fill: white;
+}
+.button:hover{
+    -fx-background-color: #9b9b9b
+}
+
+/*.toggle-button {
+  -fx-graphic: url('http://icons.iconarchive.com/icons/aha-soft/desktop-buffet/128/Pizza-icon.png');
+}.toggle-button.selected {
+  -fx-graphic: url('http://icons.iconarchive.com/icons/aha-soft/desktop-buffet/128/Piece-of-cake-icon.png');
+}*/

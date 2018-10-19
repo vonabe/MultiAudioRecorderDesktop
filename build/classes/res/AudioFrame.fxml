@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Group fx:id="rootGroup" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="multiaudiorecorder.AudioFrameController">
+   <children>
+      <AnchorPane prefHeight="486.0" prefWidth="781.0">
+         <children>
+            <Group AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+               <children>
+                  <Rectangle arcHeight="50.0" arcWidth="50.0" cache="true" depthTest="ENABLE" fill="WHITE" height="400.0" opacity="0.9" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" style="-fx-fill: linear-gradient(#4A4A4A, #000000);" width="600.0">
+                     <effect>
+                        <DropShadow height="40.0" radius="19.5" spread="0.48" width="40.0" />
+                     </effect>
+                  </Rectangle>
+                  <Pane fx:id="viewelement" layoutX="277.0" layoutY="72.0" prefHeight="225.0" prefWidth="300.0" styleClass="panelview" stylesheets="@CSS.css">
+                     <children>
+                        <Canvas fx:id="canvas" disable="true" height="225.0" width="300.0" />
+                        <ImageView fx:id="imgStream" depthTest="DISABLE" fitHeight="225.0" fitWidth="300.0" preserveRatio="true" smooth="false" styleClass="choisebox">
+                           <viewport>
+                              <Rectangle2D />
+                           </viewport>
+                        </ImageView>
+                        <ProgressIndicator fx:id="progressLoad" layoutX="124.0" layoutY="86.0" />
+                     </children>
+                     <effect>
+                        <InnerShadow>
+                           <input>
+                              <DropShadow>
+                                 <input>
+                                    <Reflection fraction="0.33" topOpacity="0.65" />
+                                 </input>
+                              </DropShadow>
+                           </input>
+                        </InnerShadow>
+                     </effect>
+                  </Pane>
+                  <VBox blendMode="EXCLUSION" layoutX="6.0" layoutY="317.0" prefHeight="76.0" prefWidth="243.0" spacing="5.0" styleClass="vbox" stylesheets="@CSS.css">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="txtValueSlider" prefHeight="25.0" prefWidth="126.0" text="delay - 0" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font name="Candara Bold" size="20.0" />
+                                 </font>
+                                 <effect>
+                                    <Bloom threshold="0.0" />
+                                 </effect>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <Slider fx:id="slider" blockIncrement="0.1" majorTickUnit="0.1" max="10.0" prefHeight="40.0" prefWidth="219.0" showTickMarks="true" value="0.0">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <effect>
+                              <Bloom threshold="0.79" />
+                           </effect>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Slider>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                     </padding>
+                  </VBox>
+                  <MenuBar fx:id="taskpanel" layoutX="8.0" layoutY="2.0" prefHeight="25.0" prefWidth="585.0" style="-fx-background-radius: 30;">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="File">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Close" />
+                              <CheckMenuItem fx:id="autorun" mnemonicParsing="false" text="autorun" />
+                              <CheckMenuItem fx:id="autohide" mnemonicParsing="false" text="autohide" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Edit">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Delete" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Help">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="About" />
+                        </items>
+                      </Menu>
+                    </menus>
+                     <effect>
+                        <DropShadow blurType="TWO_PASS_BOX" height="47.46" offsetY="10.0" radius="11.365" width="0.0" />
+                     </effect>
+                  </MenuBar>
+                  <StackPane layoutX="530.0" layoutY="1.0" prefHeight="21.0" prefWidth="54.0">
+                     <children>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="77.0">
+                           <children>
+                              <Button fx:id="btnHide" cancelButton="true" mnemonicParsing="false" prefHeight="0.0" prefWidth="24.0" style="-fx-background-radius: 360;" text="_">
+                                 <font>
+                                    <Font name="System Bold" size="9.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="5.0" top="2.0" />
+                                 </HBox.margin>
+                                 <effect>
+                                    <DropShadow blurType="GAUSSIAN" />
+                                 </effect>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="btnEXIT" cancelButton="true" mnemonicParsing="false" prefHeight="0.0" prefWidth="24.0" style="-fx-background-radius: 360;" text="X" textFill="RED">
+                                 <HBox.margin>
+                                    <Insets top="2.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font name="System Bold" size="9.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow blurType="GAUSSIAN" />
+                                 </effect>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                           <StackPane.margin>
+                              <Insets />
+                           </StackPane.margin>
+                        </HBox>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </StackPane>
+                  <HBox alignment="CENTER_LEFT" layoutX="261.0" layoutY="317.0" prefHeight="76.0" prefWidth="332.0" spacing="5.0" styleClass="vbox" stylesheets="@CSS.css">
+                     <padding>
+                        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                     </padding>
+                     <children>
+                        <Button fx:id="btnPlay" mnemonicParsing="false" text="Play">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <contextMenu>
+                              <ContextMenu fx:id="context_play" opacity="0.9">
+                                <items>
+                                    <RadioMenuItem mnemonicParsing="false" text="DesktopStream" />
+                                    <RadioMenuItem mnemonicParsing="false" text="AndroidCameraStream" />
+                                </items>
+                              </ContextMenu>
+                           </contextMenu>
+                        </Button>
+                        <Button fx:id="btnPause" mnemonicParsing="false" text="Pause">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="btnStop" mnemonicParsing="false" text="Stop">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <ProgressBar fx:id="progress" prefHeight="18.0" prefWidth="175.0" />
+                     </children>
+                  </HBox>
+                  <ChoiceBox fx:id="choiceboxaudioInput" layoutX="8.0" layoutY="114.0" prefWidth="150.0" styleClass="choisebox" stylesheets="@CSS.css">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ChoiceBox>
+                  <ChoiceBox fx:id="choiceboxcamera" layoutX="8.0" layoutY="158.0" prefWidth="150.0" styleClass="choisebox" stylesheets="@CSS.css">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ChoiceBox>
+                  <Button fx:id="btnUpdateDevice" layoutX="71.0" layoutY="72.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="24.0" styleClass="button-update" stylesheets="@CSS.css">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <tooltip>
+                        <Tooltip opacity="0.9" text="Update Device" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="audioINdisconnect" disable="true" layoutX="173.0" layoutY="115.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="76.0" stylesheets="@CSS.css" text="Disconnect">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="videodisconnect" disable="true" layoutX="173.0" layoutY="159.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="76.0" stylesheets="@CSS.css" text="Disconnect">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <ChoiceBox fx:id="choiceboxaudioOutput" layoutX="8.0" layoutY="200.0" prefWidth="150.0" styleClass="choisebox" stylesheets="@CSS.css">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ChoiceBox>
+                  <Button fx:id="audioOUTdisconnect" disable="true" layoutX="173.0" layoutY="201.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="76.0" stylesheets="@CSS.css" text="Disconnect">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label fx:id="numberConnect" layoutX="8.0" layoutY="89.0" text="№0">
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#dddddd" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+                  <StackPane fx:id="stackpanelIP" layoutX="227.0" layoutY="-15.0" prefHeight="59.0" prefWidth="200.0">
+                     <children>
+                        <ComboBox fx:id="boxIPcomputed" prefWidth="150.0" style="-fx-background-color: transparent;" />
+                     </children>
+                  </StackPane>
+                  <CheckBox fx:id="checkBoxPanelSlide" layoutX="583.0" layoutY="170.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="21.0" selected="true" />
+                  <Canvas fx:id="canvas_spectrum" height="40.0" layoutY="32.0" width="600.0" />
+                  <Text fx:id="textNameApplication" layoutX="21.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MultiAudioRecorder" textAlignment="CENTER">
+                     <font>
+                        <Font name="Candara" size="24.0" />
+                     </font>
+                     <fill>
+                        <RadialGradient centerX="0.7555555555555555" centerY="0.3571428571428571" cycleMethod="REFLECT" radius="0.8488372093023255">
+                           <stops>
+                              <Stop color="RED" />
+                              <Stop color="BLACK" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </fill>
+                  </Text>
+               </children>
+            </Group>
+            <ListView fx:id="listviewserver" layoutX="649.0" layoutY="43.0" prefHeight="400.0" prefWidth="200.0" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+      </AnchorPane>
+   </children>
+</Group>
